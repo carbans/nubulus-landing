@@ -1,54 +1,65 @@
-# Astro Starter Kit: Basics
+This is a [Tina CMS](https://tina.io/) project for Hugo.
 
-```sh
-npm create astro@latest -- --template basics
+## Setup
+
+- Fork this repo
+- Clone the fork your local machine.
+- This starter assumes that you have Hugo installed on your local machine. If not, reference [this guide](https://gohugo.io/getting-started/installing/).
+
+## Local Development
+
+Install the project's dependencies:
+
+```
+yarn install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Run the project locally:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+yarn dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Open [http://localhost:1313](http://localhost:1313) with your browser to see the result.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Building the Starter Locally (Using the hosted content API)
 
-Any static assets, like images, can be placed in the `public/` directory.
+Replace the `.env.example`, with `.env`
 
-## 🧞 Commands
+```
+TINA_CLIENT_ID=<get this from the project you create at app.tina.io>
+TINA_TOKEN=<get this from the project you create at app.tina.io>
+TINA_BRANCH=<Specify the branch with Tina configured>
+```
 
-All commands are run from the root of the project, from a terminal:
+Build the project:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+yarn build
+```
 
-## 👀 Want to learn more?
+## Deploying the Site
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project can easily be deployed using services like [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com/). 
+
+### Build settings
+
+In general, the build settings will look like so:
+
+<img width="908" alt="hugo-build-settings" src="https://user-images.githubusercontent.com/3323181/198081223-c8830e49-2a77-4c7a-b1cf-bc9a44ca96cf.png">
+
+### Environment variables
+
+When setting up the Netlify/Vercel project, apply the `TINA_CLIENT_ID` & `TINA_TOKEN` environment variables from your [app.tina.io](https://app.tina.io) project. 
+
+The Hugo theme in this starter also depends on using a specific version of Hugo. Set the following environment variable as well:
+`HUGO_VERSION`: `0.92.0`
+
+## Learn More
+
+To learn more about Tina, take a look at the following resources:
+
+- [Tina Docs](https://tina.io/docs)
+- [Getting Started Guide](https://tina.io/guides/tinacms/non-react-based-ssg/guide/)
+
+You can check out the [Tina GitHub repository](https://github.com/tinacms/tinacms) - your feedback and contributions are welcome!
